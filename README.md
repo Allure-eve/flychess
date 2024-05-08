@@ -10,7 +10,7 @@
 
 > The quickest way to do this is to download the zip of the project or fork it into your personal repository.
 
-1. Clone code: execute command---git clone https://github.com/laoer536/vite3.0-react18-TypeScript-router-dom6-mobx6-Eslint-prettier-template
+1. Clone code: execute command---git clone https://github.com/Allure-eve/flychess.git
 
 2. The editor opens and downloads the dependencies：Execution of commands--- `pnpm i`
 
