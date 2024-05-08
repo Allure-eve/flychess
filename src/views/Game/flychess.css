@@ -1,0 +1,177 @@
+.page-container {
+  padding: 5%;
+}
+.fly-chess-board-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2vw;
+}
+.fly-chess-board-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsla(0, 0%, 100%, 0.2);
+  box-shadow: 0 1px 6px 0 hsla(0, 0%, 100%, 0.1);
+  flex: 0 0 13%;
+}
+.fly-chess-board-box.round {
+  border-radius: 5px;
+}
+.fly-chess-board-box.lt {
+  border-top-left-radius: 50%;
+}
+.fly-chess-board-box.lb {
+  border-bottom-left-radius: 50%;
+}
+.fly-chess-board-box.rt {
+  border-top-right-radius: 50%;
+}
+.fly-chess-board-box.rb {
+  border-bottom-right-radius: 50%;
+}
+
+.fly-chess-board-box .box {
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding-top: 100%;
+  position: relative;
+}
+.fly-chess-board-box .arrow {
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding-top: 100%;
+  position: relative;
+}
+.fly-chess-board-box .arrow .svg-icon {
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  width: 60%;
+  height: 60%;
+}
+.fly-chess-board-box .box span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.fly-chess-board-col {
+  width: 13%;
+  display: flex;
+  flex-direction: column;
+}
+
+.fly-chess-board-col.col-reverse .fly-chess-board-box:not(:first-child) {
+  margin-bottom: 2vw;
+}
+.fly-chess-board-col.col-reverse .fly-chess-board-box:first-child {
+  margin-bottom: 0;
+}
+
+.fly-chess-board-col .fly-chess-board-box:not(:last-child) {
+  margin-bottom: 2vw;
+}
+
+.fly-chess-board-col .fly-chess-board-box {
+  margin: 0;
+}
+
+.col-reverse {
+  flex-direction: column-reverse !important;
+}
+
+.row-reverse {
+  flex-direction: row-reverse !important;
+}
+
+.fly-chess-board-row.arrow-space .fly-chess-board-box,
+.fly-chess-board-box.arrow-space {
+  background: transparent;
+  box-shadow: none;
+}
+.fly-chess-board-row.arrow-br .svg-icon {
+  transform: rotate(-120deg);
+}
+.fly-chess-board-row.arrow-bl .svg-icon {
+  transform: rotate(120deg) scaleX(-1);
+}
+
+.fly-chess-board-box.arrow-space .arrow-ltb.svg-icon {
+  transform: rotate(75deg) scaleX(-1);
+}
+
+.fly-chess-board-box.arrow-space .arrow-trl.svg-icon {
+  transform: rotate(170deg) scaleX(-1);
+}
+.fly-chess-board-box.arrow-space .arrow-brt.svg-icon {
+  transform: rotate(-100deg) scaleX(-1);
+}
+.icon-done {
+  position: absolute;
+  left: 25%;
+  top: 25%;
+  width: 50%;
+  height: 50%;
+}
+
+.player {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+.player img {
+  width: 40%;
+}
+.fly-chess-board-col.actions {
+  flex: 1;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.fly-chess-board-col.actions .player-status {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fly-chess-board-col.actions .player-status .item {
+  width: 30%;
+  text-align: center;
+  border: 1px solid var(--UI-FC-0);
+  padding: 5px 0;
+  font-weight: bold;
+  transition: all 0.5s linear;
+}
+.fly-chess-board-col.actions .player-status .item.active {
+  background: #e5e5e5;
+  color: #333;
+}
+.fly-chess-board-col.actions .player-status .item:first-child {
+  border-right: 0;
+}
+
+.fly-chess-board-col.actions .dice-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+.fly-chess-board-col.actions .dice-container img {
+  height: 70%;
+  font-size: 0;
+}

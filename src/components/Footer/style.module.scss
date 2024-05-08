@@ -1,0 +1,33 @@
+.AppHeader {
+  height: 44px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+  background-image: radial-gradient(transparent 1px, var(--UI-APPBAR-BG) 0);
+  border-bottom: 0.5px solid #000;
+  backdrop-filter: saturate(50%) blur(4px);
+  -webkit-backdrop-filter: saturate(50%) blur(4px);
+  background-size: 4px 4px;
+  position: relative;
+  z-index: 2;
+}
+.AppName {
+  color: var(--UI-FG-0);
+  font-weight: bold;
+  flex: 1;
+  text-align: center;
+}
+.AppLeading {
+  width: 20%;
+}
+
+.AppAction {
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+}
