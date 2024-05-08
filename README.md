@@ -1,9 +1,9 @@
-# Vite5, React18 (A simple generic example template)
+# Vite5, React18 (情人节飞行棋、晓倩笔记简单实现)
 
 
 ### Tips
 
-- unfinished version
+- 此代码玩法未实现所有功能
 
 
 ### Getting Started
