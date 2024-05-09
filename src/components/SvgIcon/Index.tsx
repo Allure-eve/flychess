@@ -20,7 +20,7 @@ type SvgIconProps = {
 export default function SvgIcon({ color, name = '', size = '100%', className = '', prefix = 'icon' }: SvgIconProps) {
   const symbolId = useMemo(() => `#${prefix}-${name}`, [prefix, name])
   return (
-    <svg className={`svg-icon ${className}`} aria-hidden="true">
+    <svg className={`svg-icon ${className}`} aria-hidden="true" width={size} height={size}>
       <use href={symbolId} width={size} height={size} fill={color} />
     </svg>
   )

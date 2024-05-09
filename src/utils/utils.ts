@@ -11,7 +11,7 @@ export interface BoxsData {
   description2: string
 }
 
-export const genBoxs = (descriptions: Array<string>) => {
+export const genBoxs = (descriptions: string[][]) => {
   const _tempArr: Array<BoxsData> = []
   for (let index = 0; index < descriptions.length; index++) {
     let className = 'round '
@@ -52,8 +52,10 @@ export const genBoxs = (descriptions: Array<string>) => {
       case 37:
       case 38:
       case 39:
-      case 0:
         className += 'rt lt'
+        break
+      case 0:
+        className += 'lt lb rt rb'
         break
       default:
         break
@@ -79,11 +81,15 @@ export const genBoxs = (descriptions: Array<string>) => {
 export const getBoxDescriptionByIndex = (data: iGameData, index: number) => {
   let ret = ['', '']
   for (const innerArray of data.boxs || []) {
-    const item = innerArray.find((item) => item.name === index - 1)
+    const item = innerArray.find((item) => item.name === index)
     ret = [item?.description1 || '', item?.description2 || '']
     if (item?.description1 || item?.description2) {
       break // 如果找到符合条件的对象，跳出循环
     }
   }
   return ret
+}
+
+export const setDocTile = (title: string) => {
+  document.title = title
 }

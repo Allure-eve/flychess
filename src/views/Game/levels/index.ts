@@ -4,11 +4,21 @@ export interface iGameData {
   id?: number
   name?: string
   boxs?: BoxsData[][]
+  color?: 'blue' | 'pink' | 'green' | 'yellow'
 }
-export default [
+const data: iGameData[] = [
   {
     id: 0,
-    name: '普通模式',
+    name: '基础模式',
     boxs: genBoxs(Level1),
+    color: 'blue',
+  },
+  {
+    id: 1,
+    name: '恋爱版',
+    boxs: genBoxs(Level1),
+    color: 'pink',
   },
 ]
+
+export default data

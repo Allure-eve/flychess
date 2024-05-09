@@ -8,22 +8,22 @@ import { useNavigate } from 'react-router-dom'
 import Footer from '@/components/Footer/Index'
 import Header from '@/components/Header/Index'
 import { Snow } from '@/components/Snow/sonw'
-
+import GameData, { iGameData } from '@/views/Game/levels/index'
 import HomeStyle from './index.module.scss'
 
-type Menu = {
-  name: string
-  data: object
-}
-
-const MenuItem = ({ menu }: { menu: Menu }) => {
+const MenuItem = ({ item }: { item: iGameData }) => {
   const navigate = useNavigate()
-  const onClick = () => {
-    navigate(`/game`)
+  const handlerButtonClick = (item: iGameData) => {
+    navigate(`/game`, { state: { ...item } })
   }
   return (
-    <div className={`${HomeStyle.HomeMenuItem} button-style`} onClick={onClick}>
-      {menu.name}
+    <div
+      className={`${HomeStyle.HomeMenuItem} button-style`}
+      onClick={() => {
+        handlerButtonClick(item)
+      }}
+    >
+      {item.name}
     </div>
   )
 }
@@ -34,13 +34,12 @@ const Home = () => {
     new Snow(rootRef.current as unknown as Element, 'snow.svg')
   }, [])
 
-  const meuns: Menu[] = [{ name: '基础模式', data: {} }]
   return (
     <div className="page-container" ref={rootRef}>
       <Header />
       <div className={HomeStyle.Menus}>
-        {meuns.map((menu) => (
-          <MenuItem menu={menu} key={menu.name} />
+        {GameData.map((item) => (
+          <MenuItem item={item} key={item.name} />
         ))}
       </div>
       <Footer />

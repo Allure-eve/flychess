@@ -10,10 +10,16 @@
   background-color: hsla(0, 0%, 100%, 0.2);
   box-shadow: 0 1px 6px 0 hsla(0, 0%, 100%, 0.1);
   flex: 0 0 13%;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+.fly-chess-board-box:active {
+  transform: scale(0.7);
 }
 .fly-chess-board-box.round {
   border-radius: 5px;
 }
+
 .fly-chess-board-box.lt {
   border-top-left-radius: 50%;
 }

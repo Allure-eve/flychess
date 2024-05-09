@@ -3,7 +3,7 @@
   display: flex;
   overflow-y: scroll;
   overflow-x: hidden;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
@@ -40,5 +40,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 20px;
   }
 }

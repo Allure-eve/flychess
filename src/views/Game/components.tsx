@@ -11,8 +11,20 @@ export interface PersonData {
   color?: string
 }
 
-export const ChessBox = ({ children, className }: { children?: ReactNode; className?: string }) => {
-  return <div className={`fly-chess-board-box ${className || ''}`}>{children}</div>
+export const ChessBox = ({
+  children,
+  className,
+  onClick,
+}: {
+  children?: ReactNode
+  className?: string
+  onClick?: () => void
+}) => {
+  return (
+    <div className={`fly-chess-board-box ${className || ''}`} onClick={onClick}>
+      {children}
+    </div>
+  )
 }
 
 export const ChessRow = ({ children, className }: { children?: ReactNode; className?: string }) => {
@@ -43,4 +55,15 @@ export const Player = ({ data }: { data: PersonData }) => {
       <SvgIcon name={data?.img} color={data?.color} />
     </div>
   )
+}
+
+export const getStepPosition = (id?: number): PersonData => {
+  const elem = document.getElementById(`box-${id}`)
+  const parent = elem?.offsetParent as HTMLElement
+  return {
+    x: (parent?.offsetLeft || 0) + (elem?.offsetLeft || 0),
+    y: (parent?.offsetTop || 0) + (elem?.offsetTop || 0),
+    width: elem?.offsetWidth || 0,
+    height: elem?.offsetHeight || 0,
+  }
 }

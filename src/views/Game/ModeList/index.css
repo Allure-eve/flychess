@@ -1,0 +1,149 @@
+.levels-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 0 25px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.levels-container .title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: var(--UI-FG-0);
+  height: 40px;
+  line-height: 40px;
+}
+.levels-container .mode-list {
+  flex: 1;
+  overflow-y: scroll;
+  max-height: calc(100% - 80px);
+  width: 90%;
+}
+.levels-container .mode-list::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+.levels-container .mode-list .mode {
+  position: relative;
+  height: 37px;
+  line-height: 37px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 4px;
+  letter-spacing: 4px;
+  transition: all 0.1s ease-in-out;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.levels-container .mode-list .mode .line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.levels-container .mode-list .mode .line .line-top {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  animation: anim-top 4s linear infinite;
+}
+@keyframes anim-top {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+.levels-container .mode-list .mode .line .line-right {
+  position: absolute;
+  right: 0;
+  top: -100%;
+  width: 2px;
+  height: 100%;
+  animation: anim-right 4s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes anim-right {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+.levels-container .mode-list .mode .line .line-bottom {
+  position: absolute;
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  animation: anim-bottom 4s linear infinite;
+  animation-delay: 1.9s;
+}
+@keyframes anim-bottom {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+.levels-container .mode-list .mode .line .line-left {
+  position: absolute;
+  left: 0;
+  bottom: -100%;
+  width: 2px;
+  height: 100%;
+  animation: anim-left 4s linear infinite;
+  animation-delay: 2.9s;
+}
+@keyframes anim-left {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
+
+.levels-container .mode-list .mode.blue{
+  --mode-color: rgb(52, 152, 219);
+}
+
+.levels-container .mode-list .mode.pink{
+  --mode-color: rgb(255, 105, 180);
+}
+
+.levels-container .mode-list .mode{
+  color: var(--mode-color);
+  box-shadow: var(--mode-color) 0px 0px 1px;
+}
+.levels-container .mode-list .mode .line .line-top {
+  background: linear-gradient(90deg, transparent, var(--mode-color));
+}
+.levels-container .mode-list .mode .line .line-right {
+  background: linear-gradient(transparent, var(--mode-color));
+}
+.levels-container .mode-list .mode .line .line-bottom {
+  background: linear-gradient(270deg, transparent, var(--mode-color));
+}
+.levels-container .mode-list .mode .line .line-left {
+  background: linear-gradient(360deg, transparent, var(--mode-color));
+}
