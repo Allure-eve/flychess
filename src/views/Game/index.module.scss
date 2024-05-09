@@ -1,0 +1,12 @@
+.Page {
+  padding: 5%;
+  .Game{
+    position: relative;
+    z-index: 1;
+  }
+  .Bubbles{
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+  }
+}

@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "tsc && vite build --mode production",
     "build:test": "tsc && vite build --mode test",
     "build:docker": "tsc && vite build --mode docker",
@@ -16,9 +16,12 @@
     "docker:build": "tsc && docker build -t docker-react .",
     "docker:run": "docker rm -f docker-react && docker run --name docker-react -d -p 8082:8082 docker-react",
     "release:local": "pnpm docker:build && pnpm docker:run",
-    "log:tree": "tree -N -I \"node_modules|.git|.idea\" -a"
+    "log:tree": "tree -N -I \"node_modules|.git|.idea\" -a",
+    "nvm": "nvm use 18.8.0"
   },
   "dependencies": {
+    "antd-mobile": "^5.36.0",
+    "antd-mobile-icons": "^0.3.0",
     "axios": "^1.6.8",
     "fast-glob": "^3.3.2",
     "framer-motion": "^11.1.7",

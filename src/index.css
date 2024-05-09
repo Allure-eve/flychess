@@ -31,7 +31,7 @@
 }
 .app-container.dark {
   color-scheme: dark;
-  --UI-BG-0: #242424;
+  --UI-BG-0: #1f1f27;
   --UI-FC-0: #fff;
   --UI-APPBAR-BG: rgba(0, 0, 0, 0.39);
 }

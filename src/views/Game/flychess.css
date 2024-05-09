@@ -1,6 +1,3 @@
-.page-container {
-  padding: 5%;
-}
 .fly-chess-board-row {
   display: flex;
   justify-content: space-between;
