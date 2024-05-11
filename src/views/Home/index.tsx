@@ -14,6 +14,11 @@ import HomeStyle from './index.module.scss'
 const MenuItem = ({ item }: { item: iGameData }) => {
   const navigate = useNavigate()
   const handlerButtonClick = (item: iGameData) => {
+    if (item.id === 999) {
+      // 自定义模式
+      navigate('/diy')
+      return
+    }
     navigate(`/game`, { state: { ...item } })
   }
   return (
@@ -30,13 +35,14 @@ const MenuItem = ({ item }: { item: iGameData }) => {
 
 const Home = () => {
   const rootRef = useRef(null)
+
   useEffect(() => {
     new Snow(rootRef.current as unknown as Element, 'snow.svg')
   }, [])
 
   return (
     <div className="page-container" ref={rootRef}>
-      <Header />
+      <Header  />
       <div className={HomeStyle.Menus}>
         {GameData.map((item) => (
           <MenuItem item={item} key={item.name} />
@@ -46,5 +52,4 @@ const Home = () => {
     </div>
   )
 }
-
 export default Home

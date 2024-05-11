@@ -1,0 +1,37 @@
+.Container {
+  height: calc(100% - 88px);
+  padding: 20px 0;
+  overflow-y: scroll;
+  .Item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    .Label {
+      width: 80%;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    .Input {
+      width: 80%;
+      input {
+        width: 100%;
+        padding: 6px;
+      }
+    }
+  }
+}
+.StartButton {
+  height: 44px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .button {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--UI-FC-01);
+  }
+}

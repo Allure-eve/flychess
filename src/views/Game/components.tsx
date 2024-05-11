@@ -52,7 +52,7 @@ export const Player = ({ data }: { data: PersonData }) => {
   }
   return (
     <div className="player" style={styles}>
-      <SvgIcon name={data?.img} color={data?.color} />
+      <SvgIcon name={data?.img} size={36} color={data?.color} />
     </div>
   )
 }

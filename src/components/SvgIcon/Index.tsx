@@ -17,7 +17,7 @@ type SvgIconProps = {
  * @props  prefix 前缀 默认icon
  */
 
-export default function SvgIcon({ color, name = '', size = '100%', className = '', prefix = 'icon' }: SvgIconProps) {
+export default function SvgIcon({ color, name = '', size = '20', className = '', prefix = 'icon' }: SvgIconProps) {
   const symbolId = useMemo(() => `#${prefix}-${name}`, [prefix, name])
   return (
     <svg className={`svg-icon ${className}`} aria-hidden="true" width={size} height={size}>

@@ -144,7 +144,7 @@ const Game = () => {
       setLevelsVisible(false)
       setTimeout(() => {
         toast.close()
-      }, 1500)
+      }, 600)
     }
     // 在状态改变时执行其他操作
   }, [location.state])

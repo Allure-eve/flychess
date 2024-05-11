@@ -1,5 +1,11 @@
 import { BoxsData, genBoxs } from '@/utils/utils'
 import Level1 from './level1.json'
+import Sysconfig from '@/constants'
+
+const loadDiyBoxs = () => {
+  const data: string[][] = JSON.parse(localStorage.getItem(Sysconfig.DIY_CONFIG_KEY) || '[]')
+  return data
+}
 export interface iGameData {
   id?: number
   name?: string
@@ -17,6 +23,12 @@ const data: iGameData[] = [
     id: 1,
     name: '恋爱版',
     boxs: genBoxs(Level1),
+    color: 'pink',
+  },
+  {
+    id: 999,
+    name: '自定义模式',
+    boxs: genBoxs(loadDiyBoxs()),
     color: 'pink',
   },
 ]

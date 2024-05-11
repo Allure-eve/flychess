@@ -100,6 +100,10 @@
   background: transparent;
   box-shadow: none;
 }
+.fly-chess-board-row.arrow-space .fly-chess-board-box:active,
+.fly-chess-board-box.arrow-space:active {
+  transform: none;
+}
 .fly-chess-board-row.arrow-br .svg-icon {
   transform: rotate(-120deg);
 }

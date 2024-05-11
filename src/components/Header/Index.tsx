@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <div className={Style.AppHeader}>
       <div className={Style.AppLeading}></div>
-      <div className={Style.AppName}></div>
+      <div className={Style.AppName}>飞行棋</div>
       <div className={Style.AppAction}>
         <div className={Style.icon} onClick={handlerChangeTheme}>
           <SvgIcon name="setting" color="#FFF" className="button-style" />
