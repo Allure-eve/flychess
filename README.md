@@ -4,8 +4,8 @@
 ### Tips
 
 - 此代码玩法未实现所有功能 商务合作+V Allure_12318
-
-
+- preview site :  [https://allure-eve.github.io/flychess/](https://allure-eve.github.io/flychess/)
+- 
 ### Getting Started
 
 > The quickest way to do this is to download the zip of the project or fork it into your personal repository.
